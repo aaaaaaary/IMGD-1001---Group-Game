@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bs4mi1ljc5mni"]
+
+[ext_resource type="Texture2D" uid="uid://bp0jcuqngr25a" path="res://Assets/images/WPI_BLK.png" id="1_i8nxx"]
+[ext_resource type="Script" uid="uid://cjrm8ltjwdbom" path="res://Scripts/splash.gd" id="1_t3al1"]
+
+[sub_resource type="Animation" id="Animation_7xstc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WpiBlk:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qvm2y"]
+resource_name = "fade_out"
+length = 1.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WpiBlk:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5),
+"transitions": PackedFloat32Array(0.5, 0.5, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qvm2y"]
+_data = {
+&"RESET": SubResource("Animation_7xstc"),
+&"fade_out": SubResource("Animation_qvm2y")
+}
+
+[node name="Node2D" type="Node2D" unique_id=1801661387]
+script = ExtResource("1_t3al1")
+
+[node name="WpiBlk" type="Sprite2D" parent="." unique_id=449982689]
+texture_filter = 1
+position = Vector2(576.5884, 324.00003)
+scale = Vector2(0.3472669, 0.3472669)
+texture = ExtResource("1_i8nxx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=552668197]
+libraries/ = SubResource("AnimationLibrary_qvm2y")
+autoplay = &"fade_out"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
