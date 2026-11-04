@@ -13,7 +13,7 @@ config_version=5
 config/name="Godot Tutorial"
 run/main_scene="uid://bs4mi1ljc5mni"
 config/features=PackedStringArray("4.7", "Forward Plus")
-boot_splash/bg_color=Color(0.33333334, 0.6313726, 0.85882354, 1)
+boot_splash/bg_color=Color(0.7348015, 0.86208427, 0.9687721, 1)
 boot_splash/use_filter=false
 boot_splash/image="uid://bp0jcuqngr25a"
 config/icon="res://icon.svg"
@@ -66,4 +66,4 @@ jump={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
-environment/defaults/default_clear_color=Color(0.33333334, 0.6313726, 0.85882354, 1)
+environment/defaults/default_clear_color=Color(0.73333335, 0.8627451, 0.96862745, 1)
