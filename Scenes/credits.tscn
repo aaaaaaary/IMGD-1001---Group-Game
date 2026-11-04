@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://15pgei700w1p"]
+
+[ext_resource type="Script" uid="uid://dertcai70fqjl" path="res://Scenes/control.gd" id="1_r18jl"]
+
+[node name="Node2D" type="Node2D" unique_id=366250450]
+
+[node name="Control" type="Control" parent="." unique_id=290654456]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_r18jl")
+
+[node name="Label" type="Label" parent="Control" unique_id=1764247302]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 1791.0
+theme_override_font_sizes/font_size = 26
+text = "CREDITS
+
+
+Level Design
+
+Lead: Dylan
+Max
+
+
+
+
+Pixel Art
+
+Lead: Max
+Dylan
+
+
+
+
+Programming
+
+Lead: Aaryana
+Everyone
+
+
+
+
+Music
+
+Keira
+
+
+
+
+Writing & Narrative
+
+Keira
+Aaryana
+Max
+
+
+
+
+Production Documents
+
+Aaryana"
+horizontal_alignment = 1
+vertical_alignment = 1
