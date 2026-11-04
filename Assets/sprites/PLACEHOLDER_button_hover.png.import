@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp0jcuqngr25a"
-path="res://.godot/imported/WPI_BLK.png-7da83a8eea57070a70d55ce45e4d00e0.ctex"
+uid="uid://bdrnvgxfj6kk3"
+path="res://.godot/imported/PLACEHOLDER_button_hover.png-ebe53ba77c4800143c53fc1d1d7a5148.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/images/WPI_BLK.png"
-dest_files=["res://.godot/imported/WPI_BLK.png-7da83a8eea57070a70d55ce45e4d00e0.ctex"]
+source_file="res://Assets/sprites/PLACEHOLDER_button_hover.png"
+dest_files=["res://.godot/imported/PLACEHOLDER_button_hover.png-ebe53ba77c4800143c53fc1d1d7a5148.ctex"]
 
 [params]
 
