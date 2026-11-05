@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://c81tp8pvmrt72" path="res://Scripts/main_menu.gd" id="1_n45e2"]
 [ext_resource type="Texture2D" uid="uid://djkv8dybsx3hn" path="res://Assets/sprites/PLACEHOLDER_button.png" id="2_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://bdrnvgxfj6kk3" path="res://Assets/sprites/PLACEHOLDER_button_hover.png" id="2_ce3w2"]
-[ext_resource type="Texture2D" uid="uid://bg8hpuc0xg2ld" path="res://Assets/TitleScreenIg.png" id="2_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://utihogyxjv4u" path="res://Assets/sprites/title_background.png" id="2_cp0ys"]
 [ext_resource type="AudioStream" uid="uid://dukpc13esyf1p" path="res://Assets/sounds/click.mp3" id="5_opfnp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r18jl"]
