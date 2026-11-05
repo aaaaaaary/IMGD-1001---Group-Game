@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://btb4vo1t08ed"]
+
+[ext_resource type="Script" uid="uid://b2bwjyb75d5wh" path="res://Scenes/version_notes_hub.gd" id="1_18wrt"]
+[ext_resource type="FontFile" uid="uid://0vgtjh4nnnvw" path="res://Assets/fonts/PixelOperator8.ttf" id="2_ll7ym"]
+[ext_resource type="Texture2D" uid="uid://djkv8dybsx3hn" path="res://Assets/sprites/PLACEHOLDER_button.png" id="3_1y6bm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u2lop"]
+texture = ExtResource("3_1y6bm")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6sj1v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8tn5n"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_detail = 6
+
+[node name="Control" type="Control" unique_id=830611943]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_18wrt")
+
+[node name="Version_1_0" type="Label" parent="." unique_id=1799089915]
+layout_mode = 0
+offset_left = 6.9999995
+offset_top = 47.999996
+offset_right = 687.13367
+offset_bottom = 214.45575
+scale = Vector2(0.82063454, 0.82047915)
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_ll7ym")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxTexture_u2lop")
+text = "Version 1.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=1749988194]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 210.00002
+offset_right = 1190.0
+offset_bottom = 507.0
+scale = Vector2(0.46467298, 0.4655807)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 3
+theme_override_fonts/font = ExtResource("2_ll7ym")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_6sj1v")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8tn5n")
+text = ")Added Main Menu
+)Added Version Notes
+)Added WPI Splash
+)Added Credits"
+vertical_alignment = 1

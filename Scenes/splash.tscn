@@ -46,8 +46,8 @@ script = ExtResource("1_t3al1")
 
 [node name="WpiBlk" type="Sprite2D" parent="." unique_id=449982689]
 texture_filter = 1
-position = Vector2(576.5884, 324.00003)
-scale = Vector2(0.3472669, 0.3472669)
+position = Vector2(960, 540)
+scale = Vector2(0.61429095, 0.61429095)
 texture = ExtResource("1_i8nxx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=552668197]

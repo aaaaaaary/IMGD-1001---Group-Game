@@ -13,4 +13,6 @@ func _on_credits_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/credits.tscn")
 
 func _on_version_pressed() -> void:
-	pass
+	click_sound.play()
+	await get_tree().create_timer(0.15).timeout
+	get_tree().change_scene_to_file("res://Scenes/Version_Notes_Hub.tscn")

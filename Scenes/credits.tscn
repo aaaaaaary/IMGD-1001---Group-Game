@@ -3,8 +3,20 @@
 [ext_resource type="Script" uid="uid://dertcai70fqjl" path="res://Scenes/control.gd" id="1_r18jl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjkq6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Node2D" type="Node2D" unique_id=366250450]
+
+[node name="BackHomeButton" type="Button" parent="." unique_id=1804439428]
+offset_left = 1820.0
+offset_top = 9.0
+offset_right = 1871.0
+offset_bottom = 69.0
+scale = Vector2(1.9150044, 1.9150044)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_bjkq6")
+text = "X"
 
 [node name="Control" type="Control" parent="." unique_id=290654456]
 layout_mode = 3
@@ -15,17 +27,15 @@ script = ExtResource("1_r18jl")
 
 [node name="credits" type="Label" parent="Control" unique_id=1764247302]
 layout_mode = 0
-offset_left = -2.0
-offset_right = 1148.0
-offset_bottom = 1115.0
+offset_left = 206.0
+offset_right = 1736.0
+offset_bottom = 4425.0
+scale = Vector2(1.0039848, 1.0039848)
 theme_override_colors/font_color = Color(0.11322302, 0.28908643, 0.3785645, 1)
-theme_override_font_sizes/font_size = 26
-text = "
-
-
-
-
-🗺️ Level Design
+theme_override_constants/line_spacing = 0
+theme_override_constants/paragraph_spacing = -23
+theme_override_font_sizes/font_size = 95
+text = "🗺️ Level Design
 Lead: Dylan
 Max
 
@@ -57,24 +67,14 @@ vertical_alignment = 1
 
 [node name="CREDIT" type="Label" parent="Control" unique_id=284148467]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 1.0
-offset_right = 1156.0
-offset_bottom = 206.0
+offset_left = 210.0
+offset_top = 205.0
+offset_right = 1364.0
+offset_bottom = 410.0
+scale = Vector2(1.3339353, 1.3339353)
 theme_override_colors/font_color = Color(0.48138237, 0.11950571, 0.78786665, 1)
 theme_override_font_sizes/font_size = 150
 text = "🎮 CREDITS 🎮"
 horizontal_alignment = 1
 
-[node name="BackHomeButton" type="Button" parent="Control" unique_id=1804439428]
-layout_mode = 0
-offset_left = 345.0
-offset_top = 1275.0
-offset_right = 822.0
-offset_bottom = 1330.0
-theme_override_colors/font_color = Color(0.9098039, 0.20784314, 0.654902, 0.93333334)
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_bjkq6")
-text = "🏠 Return to Main Menu"
-
-[connection signal="pressed" from="Control/BackHomeButton" to="Control" method="_on_button_pressed"]
+[connection signal="pressed" from="BackHomeButton" to="Control" method="_on_button_pressed"]
