@@ -34,6 +34,9 @@ texture = ExtResource("2_ce3w2")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ce3w2"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m740e"]
+texture = ExtResource("2_ce3w2")
+
 [node name="Main Menu" type="Control" unique_id=1217224552]
 layout_mode = 3
 anchors_preset = 15
@@ -60,10 +63,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -183.0
-offset_top = -88.0
-offset_right = 183.0
-offset_bottom = 168.0
+offset_left = -224.0
+offset_top = -161.14285
+offset_right = 224.0
+offset_bottom = 245.34167
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 0.9720983)
@@ -107,16 +110,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -214.0
-offset_top = -259.0
-offset_right = 214.0
-offset_bottom = -145.0
+offset_left = -374.0
+offset_top = -412.0
+offset_right = 374.0
+offset_bottom = -298.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 0.9720983)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_48xlc")
-theme_override_font_sizes/font_size = 45
-text = "Game Name"
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_m740e")
+text = "Outcast Expedition"
 horizontal_alignment = 1
 vertical_alignment = 1
 
