@@ -16,6 +16,9 @@ border_width_right = 1
 border_width_bottom = 1
 corner_detail = 6
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wh8l"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="Control" type="Control" unique_id=830611943]
 layout_mode = 3
 anchors_preset = 15
@@ -58,3 +61,17 @@ text = ")Added Main Menu
 )Added WPI Splash
 )Added Credits"
 vertical_alignment = 1
+
+[node name="BackHomeButton" type="Button" parent="." unique_id=1880995170]
+layout_mode = 0
+offset_left = 1820.0
+offset_top = 9.0
+offset_right = 1871.0
+offset_bottom = 69.0
+scale = Vector2(1.9150044, 1.9150044)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_0wh8l")
+text = "X"
+
+[connection signal="pressed" from="BackHomeButton" to="." method="_on_back_home_button_pressed"]
