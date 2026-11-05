@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://c81tp8pvmrt72" path="res://Scripts/main_menu.gd" id="1_n45e2"]
 [ext_resource type="Texture2D" uid="uid://djkv8dybsx3hn" path="res://Assets/sprites/PLACEHOLDER_button.png" id="2_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://bdrnvgxfj6kk3" path="res://Assets/sprites/PLACEHOLDER_button_hover.png" id="2_ce3w2"]
+[ext_resource type="AudioStream" uid="uid://dukpc13esyf1p" path="res://Assets/sounds/click.mp3" id="5_opfnp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dnn6h"]
 texture = ExtResource("2_1ehe0")
@@ -111,6 +112,11 @@ theme_override_font_sizes/font_size = 45
 text = "Game Name"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="click" type="AudioStreamPlayer2D" parent="." unique_id=1860811498]
+position = Vector2(393, 236)
+stream = ExtResource("5_opfnp")
+volume_db = 1.292
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]

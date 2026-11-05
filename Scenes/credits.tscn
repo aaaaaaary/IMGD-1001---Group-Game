@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dertcai70fqjl" path="res://Scenes/control.gd" id="1_r18jl"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjkq6"]
+
 [node name="Node2D" type="Node2D" unique_id=366250450]
 
 [node name="Control" type="Control" parent="." unique_id=290654456]
@@ -11,56 +13,68 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_r18jl")
 
-[node name="Label" type="Label" parent="Control" unique_id=1764247302]
+[node name="credits" type="Label" parent="Control" unique_id=1764247302]
 layout_mode = 0
-offset_right = 1150.0
-offset_bottom = 1791.0
+offset_left = -2.0
+offset_right = 1148.0
+offset_bottom = 1115.0
+theme_override_colors/font_color = Color(0.11322302, 0.28908643, 0.3785645, 1)
 theme_override_font_sizes/font_size = 26
-text = "CREDITS
+text = "
 
 
-Level Design
 
+
+🗺️ Level Design
 Lead: Dylan
 Max
 
-
-
-
-Pixel Art
-
+🎨 Pixel Art
 Lead: Max
 Dylan
 
-
-
-
-Programming
-
+💻 Programming
 Lead: Aaryana
 Everyone
 
-
-
-
-Music
-
+🎵 Music
 Keira
 
-
-
-
-Writing & Narrative
-
+📖 Writing & Narrative
 Keira
 Aaryana
 Max
 
+📋 Production Documents
+Aaryana
 
+🧪 Testing & Debugging
+Everyone
 
-
-Production Documents
-
-Aaryana"
+❤️ Thanks for Playing! ❤️"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CREDIT" type="Label" parent="Control" unique_id=284148467]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 1156.0
+offset_bottom = 206.0
+theme_override_colors/font_color = Color(0.48138237, 0.11950571, 0.78786665, 1)
+theme_override_font_sizes/font_size = 150
+text = "🎮 CREDITS 🎮"
+horizontal_alignment = 1
+
+[node name="BackHomeButton" type="Button" parent="Control" unique_id=1804439428]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 1275.0
+offset_right = 822.0
+offset_bottom = 1330.0
+theme_override_colors/font_color = Color(0.9098039, 0.20784314, 0.654902, 0.93333334)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_bjkq6")
+text = "🏠 Return to Main Menu"
+
+[connection signal="pressed" from="Control/BackHomeButton" to="Control" method="_on_button_pressed"]
