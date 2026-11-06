@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://qw6bpfjsbw56" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cdtyngmkfs4tp" path="res://Assets/sprites/knight.png" id="1_v0iea"]
+[ext_resource type="Script" uid="uid://cqcjfvteovm58" path="res://Scripts/health.gd" id="3_6t5aa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
 atlas = ExtResource("1_v0iea")
@@ -184,3 +185,7 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=170653996]
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_m740e")
+
+[node name="Health" type="Node" parent="." unique_id=832537302]
+script = ExtResource("3_6t5aa")
+metadata/_custom_type_script = "uid://cqcjfvteovm58"

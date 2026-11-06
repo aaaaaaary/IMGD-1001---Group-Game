@@ -1,41 +1,41 @@
 [gd_scene format=3 uid="uid://cteao8sp1bq2f"]
 
-[ext_resource type="FontFile" uid="uid://0vgtjh4nnnvw" path="res://Assets/fonts/PixelOperator8.ttf" id="1_1ehe0"]
-[ext_resource type="FontFile" uid="uid://cdn2gcpjghsgv" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="1_48xlc"]
-[ext_resource type="Script" uid="uid://c81tp8pvmrt72" path="res://Scripts/main_menu.gd" id="1_n45e2"]
-[ext_resource type="Texture2D" uid="uid://djkv8dybsx3hn" path="res://Assets/sprites/PLACEHOLDER_button.png" id="2_1ehe0"]
-[ext_resource type="Texture2D" uid="uid://bdrnvgxfj6kk3" path="res://Assets/sprites/PLACEHOLDER_button_hover.png" id="2_ce3w2"]
-[ext_resource type="Texture2D" uid="uid://utihogyxjv4u" path="res://Assets/sprites/title_background.png" id="2_cp0ys"]
-[ext_resource type="AudioStream" uid="uid://dukpc13esyf1p" path="res://Assets/sounds/click.mp3" id="5_opfnp"]
+[ext_resource type="Script" uid="uid://c81tp8pvmrt72" path="res://Scripts/UI Elements/main_menu.gd" id="1_ok4e3"]
+[ext_resource type="Texture2D" uid="uid://utihogyxjv4u" path="res://Assets/sprites/title_background.png" id="2_8iih6"]
+[ext_resource type="FontFile" uid="uid://0vgtjh4nnnvw" path="res://Assets/fonts/PixelOperator8.ttf" id="3_a6rwk"]
+[ext_resource type="Texture2D" uid="uid://djkv8dybsx3hn" path="res://Assets/sprites/PLACEHOLDER_button.png" id="4_8ujxj"]
+[ext_resource type="Texture2D" uid="uid://bdrnvgxfj6kk3" path="res://Assets/sprites/PLACEHOLDER_button_hover.png" id="5_hgn33"]
+[ext_resource type="FontFile" uid="uid://cdn2gcpjghsgv" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="6_8mne4"]
+[ext_resource type="AudioStream" uid="uid://dukpc13esyf1p" path="res://Assets/sounds/click.mp3" id="7_f4yor"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r18jl"]
-texture = ExtResource("2_cp0ys")
+texture = ExtResource("2_8iih6")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dnn6h"]
-texture = ExtResource("2_1ehe0")
+texture = ExtResource("4_8ujxj")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n45e2"]
-texture = ExtResource("2_ce3w2")
+texture = ExtResource("5_hgn33")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_opfnp"]
-texture = ExtResource("2_ce3w2")
+texture = ExtResource("5_hgn33")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ce3w2"]
-texture = ExtResource("2_ce3w2")
+texture = ExtResource("5_hgn33")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cp0ys"]
-texture = ExtResource("2_ce3w2")
+texture = ExtResource("5_hgn33")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yhxw7"]
-texture = ExtResource("2_ce3w2")
+texture = ExtResource("5_hgn33")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_trj04"]
-texture = ExtResource("2_ce3w2")
+texture = ExtResource("5_hgn33")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ce3w2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m740e"]
-texture = ExtResource("2_ce3w2")
+texture = ExtResource("5_hgn33")
 
 [node name="Main Menu" type="Control" unique_id=1217224552]
 layout_mode = 3
@@ -44,7 +44,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_n45e2")
+script = ExtResource("1_ok4e3")
 
 [node name="Panel" type="Panel" parent="." unique_id=403973582]
 layout_mode = 1
@@ -75,7 +75,7 @@ theme_override_constants/separation = 20
 [node name="Start" type="Button" parent="VBoxContainer" unique_id=2146922004]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("1_1ehe0")
+theme_override_fonts/font = ExtResource("3_a6rwk")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxTexture_dnn6h")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_n45e2")
@@ -85,7 +85,7 @@ text = "Start"
 [node name="Credits" type="Button" parent="VBoxContainer" unique_id=1864255573]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("1_1ehe0")
+theme_override_fonts/font = ExtResource("3_a6rwk")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxTexture_dnn6h")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ce3w2")
@@ -95,7 +95,7 @@ text = "Credits"
 [node name="Version" type="Button" parent="VBoxContainer" unique_id=899123214]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("1_1ehe0")
+theme_override_fonts/font = ExtResource("3_a6rwk")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxTexture_dnn6h")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_yhxw7")
@@ -118,7 +118,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 0.9720983)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("1_48xlc")
+theme_override_fonts/font = ExtResource("6_8mne4")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxTexture_m740e")
 text = "Outcast Expedition"
@@ -127,7 +127,7 @@ vertical_alignment = 1
 
 [node name="click" type="AudioStreamPlayer2D" parent="." unique_id=1860811498]
 position = Vector2(393, 236)
-stream = ExtResource("5_opfnp")
+stream = ExtResource("7_f4yor")
 volume_db = 1.292
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
