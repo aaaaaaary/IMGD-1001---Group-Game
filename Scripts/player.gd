@@ -4,11 +4,13 @@ extends CharacterBody2D
 const SPEED = 110.0
 const JUMP_VELOCITY = -300.0
 const DASH_SPEED = 350.0
+const DASH_TIME = 0.2
 
 
 var jump_count = 0 
 var max_jumps = 2
 var dashing = false 
+var dash_timer = 0.0 
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -21,6 +23,11 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		jump_count=0
 		
+	if dashing:
+		dash_timer -=delta
+		
+		if dash_timer <= 0:
+			dashing = false
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and jump_count < max_jumps:
@@ -47,6 +54,7 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("dash"):
 		dashing = true 
+		dash_timer = DASH_TIME
 		
 	
 	if direction:
