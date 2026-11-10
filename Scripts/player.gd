@@ -13,12 +13,14 @@ var dashing = false
 var dash_timer = 0.0 
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-
+@onready var pop_sound = $pop 
+@onready var run_sound = $run
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		
 		
 	if is_on_floor():
 		jump_count=0
@@ -33,6 +35,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and jump_count < max_jumps:
 		velocity.y = JUMP_VELOCITY
 		jump_count+=1
+		pop_sound.play()
+
+
 
 	# Get the input direction: -1, 0, 1
 	var direction := Input.get_axis("move left", "move right")
@@ -49,8 +54,10 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.play("idle")
 		else:
 			animated_sprite.play("run")
+			run_sound.play()
 	else:
 		animated_sprite.play("jump")
+		pop_sound.play()
 	
 	if Input.is_action_just_pressed("dash"):
 		dashing = true 

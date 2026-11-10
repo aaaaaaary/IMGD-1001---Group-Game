@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://qw6bpfjsbw56" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cdtyngmkfs4tp" path="res://Assets/sprites/knight.png" id="1_v0iea"]
 [ext_resource type="Script" uid="uid://cqcjfvteovm58" path="res://Scripts/health.gd" id="3_6t5aa"]
+[ext_resource type="AudioStream" uid="uid://bvikm1a18ae1o" path="res://Assets/sounds/pop.mp3" id="4_vgqql"]
+[ext_resource type="AudioStream" uid="uid://cas4x7363fryr" path="res://Assets/sounds/run.wav" id="5_fkybt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
 atlas = ExtResource("1_v0iea")
@@ -189,3 +191,11 @@ shape = SubResource("CircleShape2D_m740e")
 [node name="Health" type="Node" parent="." unique_id=832537302]
 script = ExtResource("3_6t5aa")
 metadata/_custom_type_script = "uid://cqcjfvteovm58"
+
+[node name="pop" type="AudioStreamPlayer2D" parent="." unique_id=770159638]
+stream = ExtResource("4_vgqql")
+volume_db = -12.274
+
+[node name="run" type="AudioStreamPlayer2D" parent="." unique_id=931448753]
+stream = ExtResource("5_fkybt")
+volume_db = 0.75

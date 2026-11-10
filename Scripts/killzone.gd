@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var timer: Timer = $Timer
+@onready var die_sound = $die
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -8,6 +9,7 @@ func _on_body_entered(body: Node2D) -> void:
 	Engine.time_scale = 0.5
 	body.get_node("CollisionShape2D").queue_free()
 	timer.start()
+	die_sound.play()
 
 
 func _on_timer_timeout() -> void:
