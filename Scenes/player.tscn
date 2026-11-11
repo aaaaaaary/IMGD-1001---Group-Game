@@ -199,11 +199,3 @@ volume_db = -12.274
 [node name="run" type="AudioStreamPlayer2D" parent="." unique_id=931448753]
 stream = ExtResource("5_fkybt")
 volume_db = 0.75
-
-[node name="Area2D" type="Area2D" parent="." unique_id=1225978228]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=115583697]
-position = Vector2(0, -5)
-shape = SubResource("CircleShape2D_m740e")
-
-[connection signal="health_depleted" from="Health" to="." method="_on_health_depleted"]

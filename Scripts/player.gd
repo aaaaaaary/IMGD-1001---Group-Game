@@ -20,8 +20,6 @@ var dashing = false
 var dash_timer = 0.0 
 
 
-signal received_damage(damage: int)
-
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -80,14 +78,3 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-
-func _on_health_depleted() -> void:
-	print("You died!")
-
-func _ready():
-	connect("area entered", _on_area_entered)
-
-func _on_area_entered(hitbox: Hitbox) -> void:
-	if hitbox != null:
-		health.health -= hitbox.damage
-		received_damage.emit(hitbox.damage)
