@@ -1,20 +1,27 @@
 extends CharacterBody2D
 
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var health: Health = $Health
+@onready var pop_sound = $pop 
+@onready var run_sound = $run
 
+
+# constants
 const SPEED = 110.0
 const JUMP_VELOCITY = -300.0
 const DASH_SPEED = 350.0
 const DASH_TIME = 0.2
 
-
+# jump variables
 var jump_count = 0 
 var max_jumps = 2
+# dash variable
 var dashing = false 
 var dash_timer = 0.0 
 
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var pop_sound = $pop 
-@onready var run_sound = $run
+
+signal received_damage(damage: int)
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -73,3 +80,14 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+func _on_health_depleted() -> void:
+	print("You died!")
+
+func _ready():
+	connect("area entered", _on_area_entered)
+
+func _on_area_entered(hitbox: Hitbox) -> void:
+	if hitbox != null:
+		health.health -= hitbox.damage
+		received_damage.emit(hitbox.damage)

@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bdmqbiq0gnd73" path="res://Scenes/Obstacles/platform_snow.tscn" id="7_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://ntbxne5byr88" path="res://Scenes/Obstacles/slime.tscn" id="8_v158k"]
 [ext_resource type="FontFile" uid="uid://0vgtjh4nnnvw" path="res://Assets/fonts/PixelOperator8.ttf" id="10_o5yvi"]
+[ext_resource type="PackedScene" uid="uid://vmuxhp6rdhtx" path="res://Scenes/Obstacles/slimeTEST.tscn" id="11_rku1e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
 texture = ExtResource("2_qxrlw")
@@ -417,6 +418,9 @@ position = Vector2(936, 1)
 
 [node name="Slime4" parent="Enemies" unique_id=521884556 instance=ExtResource("8_v158k")]
 position = Vector2(1976, 48)
+
+[node name="Slime3" parent="Enemies" unique_id=1554213260 instance=ExtResource("11_rku1e")]
+position = Vector2(120, -31)
 
 [node name="Labels" type="Node" parent="." unique_id=1917735747]
 
