@@ -2,19 +2,6 @@
 
 [ext_resource type="Script" uid="uid://b2bwjyb75d5wh" path="res://Scripts/UI Elements/version_notes.gd" id="1_x72ep"]
 [ext_resource type="FontFile" uid="uid://0vgtjh4nnnvw" path="res://Assets/fonts/PixelOperator8.ttf" id="2_dqr58"]
-[ext_resource type="Texture2D" uid="uid://djkv8dybsx3hn" path="res://Assets/sprites/PLACEHOLDER_button.png" id="3_p1fid"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u2lop"]
-texture = ExtResource("3_p1fid")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6sj1v"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8tn5n"]
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-corner_detail = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wh8l"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -28,40 +15,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x72ep")
 
-[node name="Version_1_0" type="Label" parent="." unique_id=1799089915]
-layout_mode = 0
-offset_left = 6.9999995
-offset_top = 47.999996
-offset_right = 687.13367
-offset_bottom = 214.45575
-scale = Vector2(0.82063454, 0.82047915)
-size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_dqr58")
-theme_override_font_sizes/font_size = 72
-theme_override_styles/normal = SubResource("StyleBoxTexture_u2lop")
-text = "Version 1.0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label" type="Label" parent="." unique_id=1749988194]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 210.00002
-offset_right = 1190.0
-offset_bottom = 507.0
-scale = Vector2(0.46467298, 0.4655807)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/line_spacing = 3
-theme_override_fonts/font = ExtResource("2_dqr58")
-theme_override_font_sizes/font_size = 72
-theme_override_styles/normal = SubResource("StyleBoxFlat_6sj1v")
-theme_override_styles/focus = SubResource("StyleBoxFlat_8tn5n")
-text = ")Added Main Menu
-)Added Version Notes
-)Added WPI Splash
-)Added Credits"
-vertical_alignment = 1
-
 [node name="BackHomeButton" type="Button" parent="." unique_id=1880995170]
 layout_mode = 0
 offset_left = 1820.0
@@ -73,5 +26,30 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_0wh8l")
 text = "X"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2117273928]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 41.0
+offset_right = 1789.0
+offset_bottom = 1036.0
+theme_override_constants/paragraph_separation = 8
+theme_override_fonts/normal_font = ExtResource("2_dqr58")
+theme_override_font_sizes/normal_font_size = 48
+text = "Version 1.0
+> Added Main Menu
+> Added Credits page
+> Added Version Notes
+> Added Splash Screen
+
+Version 1.1
+> Updated Movement: Double Jump
+> Updated Movement: Dash
+> Added SFX: Jump, Death, and Run
+> Added Health Node to Player
+> Created Tutorial Quest
+> Created Placeholder UI
+> Added Tutorial World (not implemented yet)
+> Added static Sprite Sheets (not implemented yet)"
 
 [connection signal="pressed" from="BackHomeButton" to="." method="_on_back_home_button_pressed"]
