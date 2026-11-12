@@ -1,15 +1,14 @@
-class_name QuestManager extends Node
+class_name QuestManager extends Node2D
 
-
-#define ui elements
-	#added once keira finishes ui stuff
+@onready var QuestTitle:Label = GameManager.get_node("Quest/QuestTitle")
+@onready var QuestDescription: Label = GameManager.get_node("Quest/QuestDescription")
+@onready var QuestBox: CanvasLayer = GameManager.get_node("Quest")
 
 @export_group("Quest Settings")
-@export var quest_name: String #name of quest
-@export var quest_description: String #ui description of text
-@export var reached_goal_text: String #ui description text after reaching goal ("Return to [NPC name]")
+@export var quest_name: String
+@export var quest_description: String
+@export var reached_goal_text: String
 
-#all quest statuses
 enum QuestStatus{
 	available,
 	started,
@@ -17,8 +16,7 @@ enum QuestStatus{
 	finished,
 }
 
-#quest status
 @export var quest_status: QuestStatus = QuestStatus.available
 
 @export_group("Reward Settings")
-@export var reputation_amount: int #amount of reputation rewarded (or lost?)
+@export var reputation: int

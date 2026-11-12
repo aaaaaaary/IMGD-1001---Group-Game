@@ -19,6 +19,8 @@ var max_jumps = 2
 var dashing = false 
 var dash_timer = 0.0 
 
+func _ready() -> void:
+	add_to_group("Player")
 
 
 func _physics_process(delta: float) -> void:

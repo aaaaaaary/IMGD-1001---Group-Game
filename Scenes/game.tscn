@@ -11,8 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://bdmqbiq0gnd73" path="res://Scenes/Obstacles/platform_snow.tscn" id="7_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://ntbxne5byr88" path="res://Scenes/Obstacles/slime.tscn" id="8_v158k"]
 [ext_resource type="FontFile" uid="uid://0vgtjh4nnnvw" path="res://Assets/fonts/PixelOperator8.ttf" id="10_o5yvi"]
-[ext_resource type="Texture2D" uid="uid://c5hewhdc0iltp" path="res://Assets/sprites/PLACEHOLDER_npc.png" id="13_nb51f"]
-[ext_resource type="Script" uid="uid://bvf8xyhl6t7yj" path="res://Scripts/Quests/fetch_quest.gd" id="14_nnt18"]
+[ext_resource type="Script" uid="uid://db71551matabh" path="res://Scripts/Quests/tutorial.gd" id="12_1phco"]
+[ext_resource type="Texture2D" uid="uid://cdtyngmkfs4tp" path="res://Assets/sprites/knight.png" id="13_1phco"]
+[ext_resource type="Script" uid="uid://bxdoyr2fusda7" path="res://Scripts/Quests/fetch_quest.gd" id="14_nnt18"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
 texture = ExtResource("2_qxrlw")
@@ -256,20 +257,10 @@ _data = {
 &"move": SubResource("Animation_1l0tm")
 }
 
-[sub_resource type="GDScript" id="GDScript_rfjv2"]
-script/source = "extends Area2D
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnn6h"]
+size = Vector2(13, 19)
 
-
-func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group(\"Player\"):
-		if fetch_quest.quest_status == fetch_quest.QuestStatus.available:
-			quest.start_quest()
-"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m740e"]
-size = Vector2(10, 19)
-
-[node name="Game" type="Node2D" unique_id=1352168060]
+[node name="Game" type="Node2D" unique_id=1352168060 groups=["Player"]]
 
 [node name="Game Manager" type="Node" parent="." unique_id=283678039]
 unique_name_in_owner = true
@@ -494,24 +485,32 @@ text = "Good job!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="NPCs" type="Node" parent="." unique_id=1727251480]
+[node name="NPCs" type="Node" parent="." unique_id=711140323]
 
-[node name="Placeholder" type="Area2D" parent="NPCs" unique_id=79283017]
-script = SubResource("GDScript_rfjv2")
+[node name="Tutorial" type="Area2D" parent="NPCs" unique_id=1251530608 node_paths=PackedStringArray("quest")]
+script = ExtResource("12_1phco")
+quest = NodePath("Tutorial")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Placeholder" unique_id=292180958]
-position = Vector2(88, -72.5)
-shape = SubResource("RectangleShape2D_m740e")
-
-[node name="Sprite2D" type="Sprite2D" parent="NPCs/Placeholder" unique_id=1505186722]
-position = Vector2(87, -73)
-texture = ExtResource("13_nb51f")
+[node name="Placeholder" type="Sprite2D" parent="NPCs/Tutorial" unique_id=1405479969]
+position = Vector2(88, -73)
+texture = ExtResource("13_1phco")
 flip_h = true
+region_enabled = true
+region_rect = Rect2(9, 9, 13, 19)
 
-[node name="Tutorial Quest" type="Node" parent="NPCs/Placeholder" unique_id=1342197521]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Tutorial" unique_id=645204457]
+position = Vector2(87.5, -73.5)
+shape = SubResource("RectangleShape2D_dnn6h")
+
+[node name="Tutorial" type="Node2D" parent="NPCs/Tutorial" unique_id=1327526738]
 script = ExtResource("14_nnt18")
 quest_name = "Tutorial"
-quest_description = "Go fetch a fruit from the deser"
-reached_goal_text = "Return to the placeholder knight"
-reputation_amount = 1
-metadata/_custom_type_script = "uid://bvf8xyhl6t7yj"
+quest_description = "Find the fruit in the desert"
+reached_goal_text = "Return to the knight"
+reputation = 1
+metadata/_custom_type_script = "uid://bxdoyr2fusda7"
+
+[node name="FruitSpawnPoint" type="Marker2D" parent="NPCs/Tutorial" unique_id=1604040272]
+position = Vector2(920, -120)
+
+[connection signal="body_entered" from="NPCs/Tutorial" to="NPCs/Tutorial" method="_on_body_entered"]

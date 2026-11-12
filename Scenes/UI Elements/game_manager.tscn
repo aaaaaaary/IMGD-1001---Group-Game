@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://bfjl0yo7e3oth"]
+
+[ext_resource type="Script" uid="uid://bflrutfr06664" path="res://Scripts/UI Elements/game_manager.gd" id="1_pwmeu"]
+[ext_resource type="FontFile" uid="uid://cdn2gcpjghsgv" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="1_spt4p"]
+[ext_resource type="Texture2D" uid="uid://denmr44hjdeo" path="res://Assets/sprites/slime_green.png" id="2_6hekj"]
+[ext_resource type="Texture2D" uid="uid://d0186s81xngb2" path="res://Assets/sprites/fruit.png" id="3_pwmeu"]
+[ext_resource type="FontFile" uid="uid://0vgtjh4nnnvw" path="res://Assets/fonts/PixelOperator8.ttf" id="4_6hekj"]
+[ext_resource type="Texture2D" uid="uid://ca7w5vv7x3e4a" path="res://Assets/sprites/coin.png" id="5_bkv85"]
+
+[node name="UI" type="Node2D" unique_id=1727527162]
+script = ExtResource("1_pwmeu")
+
+[node name="Reputation" type="CanvasLayer" parent="." unique_id=546349662]
+visible = false
+
+[node name="Reputation" type="Label" parent="Reputation" unique_id=960953994]
+offset_left = 1510.0
+offset_top = 19.999998
+offset_right = 1843.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_spt4p")
+theme_override_font_sizes/font_size = 32
+text = "Reputation"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Reputation" unique_id=814740899]
+position = Vector2(1880, 45)
+scale = Vector2(3.5357127, 3.5357125)
+texture = ExtResource("2_6hekj")
+region_enabled = true
+region_rect = Rect2(5, 57, 14, 15)
+
+[node name="Health" type="CanvasLayer" parent="." unique_id=562154539]
+visible = false
+
+[node name="Health" type="Label" parent="Health" unique_id=1725224717]
+offset_left = 1510.0
+offset_top = 90.99999
+offset_right = 1843.0
+offset_bottom = 146.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_spt4p")
+theme_override_font_sizes/font_size = 32
+text = "Health"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Health" unique_id=294402440]
+position = Vector2(1880.1636, 113.73873)
+scale = Vector2(4.152112, 4.152112)
+texture = ExtResource("3_pwmeu")
+region_enabled = true
+region_rect = Rect2(2, 50, 11, 13)
+
+[node name="Coins" type="CanvasLayer" parent="." unique_id=1530583063]
+visible = false
+
+[node name="Coins" type="Label" parent="Coins" unique_id=709981336]
+offset_left = 1510.0
+offset_top = 159.0
+offset_right = 1843.0
+offset_bottom = 214.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_spt4p")
+theme_override_font_sizes/font_size = 32
+text = "Coins"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Coins" unique_id=602316050]
+position = Vector2(1883, 182.99998)
+scale = Vector2(3.5357127, 3.5357125)
+texture = ExtResource("5_bkv85")
+region_enabled = true
+region_rect = Rect2(3, 3, 10, 10)
+
+[node name="Quest" type="CanvasLayer" parent="." unique_id=130864099]
+visible = false
+
+[node name="QuestDescription" type="Label" parent="Quest" unique_id=1223916932]
+offset_left = 34.0
+offset_top = 77.0
+offset_right = 390.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_6hekj")
+theme_override_font_sizes/font_size = 24
+text = "Placeholder"
+
+[node name="QuestTitle" type="Label" parent="Quest" unique_id=1626237491]
+offset_left = 30.0
+offset_top = 31.0
+offset_right = 386.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_spt4p")
+theme_override_font_sizes/font_size = 31
+text = "Quest Title"
+vertical_alignment = 1
