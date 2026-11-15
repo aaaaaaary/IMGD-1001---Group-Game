@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cqcjfvteovm58" path="res://Scripts/health.gd" id="3_6t5aa"]
 [ext_resource type="AudioStream" uid="uid://bvikm1a18ae1o" path="res://Assets/sounds/pop.mp3" id="4_vgqql"]
 [ext_resource type="AudioStream" uid="uid://cas4x7363fryr" path="res://Assets/sounds/run.wav" id="5_fkybt"]
+[ext_resource type="Script" uid="uid://dwflc2l1fiwds" path="res://Scripts/Obstacles/hurtbox.gd" id="6_x3wgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
 atlas = ExtResource("1_v0iea")
@@ -199,3 +200,18 @@ volume_db = -12.274
 [node name="run" type="AudioStreamPlayer2D" parent="." unique_id=931448753]
 stream = ExtResource("5_fkybt")
 volume_db = 0.75
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=1567501528 node_paths=PackedStringArray("health")]
+collision_layer = 0
+script = ExtResource("6_x3wgy")
+health = NodePath("../Health")
+metadata/_custom_type_script = "uid://dwflc2l1fiwds"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1472589819]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_m740e")
+
+[node name="Timer" type="Timer" parent="." unique_id=497449362]
+
+[connection signal="health_depleted" from="Health" to="." method="_on_health_depleted"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

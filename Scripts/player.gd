@@ -19,8 +19,16 @@ var max_jumps = 2
 var dashing = false 
 var dash_timer = 0.0 
 
+# death variables
+@onready var death_timer: Timer = $Timer
+var death_sound = AudioStreamPlayer2D.new()
+var respawn_point: Vector2
+
+
+
 func _ready() -> void:
 	add_to_group("Player")
+	respawn_point = global_position
 
 
 func _physics_process(delta: float) -> void:
@@ -80,3 +88,21 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_health_depleted() -> void:
+	print("You died!")
+	Engine.time_scale = 0.5
+	#get_node("CollisionShape2D").queue_free()
+	death_timer.wait_time = 0.6
+	var stream = load("res://Assets/sounds/die.mp3")
+	death_sound.stream = stream
+	death_timer.start()
+	death_sound.play()
+
+
+func _on_timer_timeout() -> void:
+	Engine.time_scale = 1.0
+	death_timer.stop()
+	global_position = respawn_point
+	health.set_health(health.get_max_health())
