@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bebwehrwjxve6"
-path="res://.godot/imported/maincharacter_spritesheet_WIP.png-995d85df7f91522b78352b2a662d382f.ctex"
+uid="uid://d4fh6mj4boveb"
+path="res://.godot/imported/maincharacter_spritesheet (2).png-e0730afa973aa20ac4c8621a5a970bd9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/maincharacter_spritesheet_WIP.png"
-dest_files=["res://.godot/imported/maincharacter_spritesheet_WIP.png-995d85df7f91522b78352b2a662d382f.ctex"]
+source_file="res://Assets/sprites/maincharacter_spritesheet (2).png"
+dest_files=["res://.godot/imported/maincharacter_spritesheet (2).png-e0730afa973aa20ac4c8621a5a970bd9.ctex"]
 
 [params]
 
