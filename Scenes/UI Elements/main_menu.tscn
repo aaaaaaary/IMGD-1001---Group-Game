@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c81tp8pvmrt72" path="res://Scripts/UI Elements/main_menu.gd" id="1_ok4e3"]
 [ext_resource type="Texture2D" uid="uid://utihogyxjv4u" path="res://Assets/sprites/title_background.png" id="2_8iih6"]
 [ext_resource type="FontFile" uid="uid://0vgtjh4nnnvw" path="res://Assets/fonts/PixelOperator8.ttf" id="3_a6rwk"]
-[ext_resource type="Texture2D" uid="uid://djkv8dybsx3hn" path="res://Assets/sprites/PLACEHOLDER_button.png" id="4_8ujxj"]
+[ext_resource type="Texture2D" uid="uid://cwtg3oqkcvkxa" path="res://Assets/sprites/Button.png" id="4_ok4e3"]
 [ext_resource type="Texture2D" uid="uid://bdrnvgxfj6kk3" path="res://Assets/sprites/PLACEHOLDER_button_hover.png" id="5_hgn33"]
 [ext_resource type="FontFile" uid="uid://cdn2gcpjghsgv" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="6_8mne4"]
 [ext_resource type="AudioStream" uid="uid://dukpc13esyf1p" path="res://Assets/sounds/click.mp3" id="7_f4yor"]
@@ -11,8 +11,8 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r18jl"]
 texture = ExtResource("2_8iih6")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dnn6h"]
-texture = ExtResource("4_8ujxj")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kuoeh"]
+texture = ExtResource("4_ok4e3")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n45e2"]
 texture = ExtResource("5_hgn33")
@@ -20,11 +20,17 @@ texture = ExtResource("5_hgn33")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_opfnp"]
 texture = ExtResource("5_hgn33")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7ahcd"]
+texture = ExtResource("4_ok4e3")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ce3w2"]
 texture = ExtResource("5_hgn33")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cp0ys"]
 texture = ExtResource("5_hgn33")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f0jst"]
+texture = ExtResource("4_ok4e3")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yhxw7"]
 texture = ExtResource("5_hgn33")
@@ -77,7 +83,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_a6rwk")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxTexture_dnn6h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_kuoeh")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_n45e2")
 theme_override_styles/hover = SubResource("StyleBoxTexture_opfnp")
 text = "Start"
@@ -87,7 +93,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_a6rwk")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxTexture_dnn6h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_7ahcd")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ce3w2")
 theme_override_styles/hover = SubResource("StyleBoxTexture_cp0ys")
 text = "Credits"
@@ -97,7 +103,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_a6rwk")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxTexture_dnn6h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_f0jst")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_yhxw7")
 theme_override_styles/hover = SubResource("StyleBoxTexture_trj04")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ce3w2")
