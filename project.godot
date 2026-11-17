@@ -42,7 +42,7 @@ project/assembly_name="Godot Tutorial"
 [global_group]
 
 Player=""
-Respawns=""
+CurrentQuest="Should contain only one quest at a time"
 
 [input]
 

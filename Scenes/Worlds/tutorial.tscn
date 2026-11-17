@@ -202,6 +202,3 @@ position_smoothing_enabled = true
 
 [node name="Slime" parent="." unique_id=633403041 instance=ExtResource("4_a6qvh")]
 position = Vector2(225, 1)
-
-[node name="RespawnPoint" type="Marker2D" parent="." unique_id=416677226]
-position = Vector2(17, 1)
