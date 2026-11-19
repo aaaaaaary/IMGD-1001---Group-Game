@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cwtg3oqkcvkxa" path="res://Assets/sprites/Button.png" id="4_ok4e3"]
 [ext_resource type="Texture2D" uid="uid://c4ebwarp75sx6" path="res://Assets/sprites/Copy of Button.png" id="5_8iih6"]
 [ext_resource type="Texture2D" uid="uid://55rqae1ona6a" path="res://Assets/sprites/GreenButton.png" id="5_a6rwk"]
-[ext_resource type="Texture2D" uid="uid://bdrnvgxfj6kk3" path="res://Assets/sprites/PLACEHOLDER_button_hover.png" id="5_hgn33"]
 [ext_resource type="FontFile" uid="uid://cdn2gcpjghsgv" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="6_8mne4"]
 [ext_resource type="AudioStream" uid="uid://dukpc13esyf1p" path="res://Assets/sounds/click.mp3" id="7_f4yor"]
+[ext_resource type="Texture2D" uid="uid://dxkl2ka606gk0" path="res://Assets/sprites/TitleFrame (4).png" id="8_a6rwk"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r18jl"]
 texture = ExtResource("2_8iih6")
@@ -42,8 +42,8 @@ texture = ExtResource("5_8iih6")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ce3w2"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m740e"]
-texture = ExtResource("5_hgn33")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hgn33"]
+texture = ExtResource("8_a6rwk")
 
 [node name="Main Menu" type="Control" unique_id=1217224552]
 layout_mode = 3
@@ -118,17 +118,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -374.0
-offset_top = -412.0
-offset_right = 374.0
-offset_bottom = -298.0
+offset_left = -412.0
+offset_top = -376.0
+offset_right = 413.0
+offset_bottom = -184.66132
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 0.9720983)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_8mne4")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxTexture_m740e")
+theme_override_styles/normal = SubResource("StyleBoxTexture_hgn33")
 text = "Outcast Expedition"
 horizontal_alignment = 1
 vertical_alignment = 1

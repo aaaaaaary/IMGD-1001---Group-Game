@@ -1,17 +1,20 @@
 class_name TimedQuest extends QuestManager
 
-# @onready var timer: Timer = $Timer
-
 func start_quest() -> void:
-	if quest_status == QuestStatus.available:
-		quest_status = QuestStatus.started
-		
-		QuestBox.visible = true
-		QuestTitle.text = quest_name
-		QuestDescription.text = quest_description
-		# timer.start()
+	if get_tree().get_node_count_in_group("CurrentQuest") == 0:
+		if quest_status == QuestStatus.available:
+			quest_status = QuestStatus.started
+			add_to_group("CurrentQuest")
+			
+			QuestBox.visible = true
+			QuestTitle.text = quest_name
+			QuestDescription.text = quest_description
 
-# func restart_quest() -> void:
+
+func restart_quest() -> void:
+	if quest_status == QuestStatus.started:
+		quest_status = QuestStatus.available
+		QuestDescription.text = "Your time ran out! Go back to restart the quest."
 
 
 func reached_goal() -> void:
@@ -23,6 +26,7 @@ func reached_goal() -> void:
 func finish_quest() -> void:
 	if quest_status == QuestStatus.reached_goal:
 		quest_status = QuestStatus.finished
+		remove_from_group("CurrentQuest")
 		
 		QuestBox.visible = false
 		GameManager.reputation += reputation
