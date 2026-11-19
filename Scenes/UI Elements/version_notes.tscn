@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://btb4vo1t08ed"]
 
 [ext_resource type="Script" uid="uid://b2bwjyb75d5wh" path="res://Scripts/UI Elements/version_notes.gd" id="1_x72ep"]
-[ext_resource type="FontFile" uid="uid://0vgtjh4nnnvw" path="res://Assets/fonts/PixelOperator8.ttf" id="2_dqr58"]
+[ext_resource type="FontFile" uid="uid://dcxbe8n68won6" path="res://Assets/fonts/PixelifySans-Regular.ttf" id="2_xdwxp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wh8l"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -34,7 +34,7 @@ offset_top = 41.0
 offset_right = 1789.0
 offset_bottom = 1036.0
 theme_override_constants/paragraph_separation = 8
-theme_override_fonts/normal_font = ExtResource("2_dqr58")
+theme_override_fonts/normal_font = ExtResource("2_xdwxp")
 theme_override_font_sizes/normal_font_size = 48
 text = "Version 1.0
 > Added Main Menu
@@ -50,6 +50,18 @@ Version 1.1
 > Created Tutorial Quest
 > Created Placeholder UI
 > Added Tutorial World (not implemented yet)
-> Added static Sprite Sheets (not implemented yet)"
+> Added static Sprite Sheets (not implemented yet)
+
+Version 1.2
+> Created Tutorial Timer Quest
+> Implemented Health System 
+> Updated Fonts
+> Updated Character Sprites
+> Updated Characted Animations: Run
+> Updated Characted Animations: Jump
+> Began work on Other Animations: Death & Dash
+> Updated UI
+> Updated Tutorial Map (not implemeted yet)
+> Began First World Design"
 
 [connection signal="pressed" from="BackHomeButton" to="." method="_on_back_home_button_pressed"]

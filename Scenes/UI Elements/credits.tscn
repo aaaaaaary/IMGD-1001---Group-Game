@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://15pgei700w1p"]
 
 [ext_resource type="Script" uid="uid://dertcai70fqjl" path="res://Scripts/UI Elements/credits.gd" id="1_r18jl"]
+[ext_resource type="FontFile" uid="uid://40rsfcxo42rm" path="res://Assets/fonts/PixelifySans-Bold.ttf" id="2_4xyqs"]
+[ext_resource type="FontFile" uid="uid://dcxbe8n68won6" path="res://Assets/fonts/PixelifySans-Regular.ttf" id="2_khmy4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjkq6"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -36,7 +38,8 @@ scale = Vector2(1.0039848, 1.0039848)
 theme_override_colors/font_color = Color(0.11322302, 0.28908643, 0.3785645, 1)
 theme_override_constants/line_spacing = 0
 theme_override_constants/paragraph_spacing = -23
-theme_override_font_sizes/font_size = 95
+theme_override_fonts/font = ExtResource("2_khmy4")
+theme_override_font_sizes/font_size = 88
 text = "🗺️ Level Design
 Lead: Dylan
 Max
@@ -47,7 +50,7 @@ Dylan
 
 💻 Programming
 Lead: Aaryana
-Everyone
+Keira
 
 🎵 Music
 Keira
@@ -75,7 +78,8 @@ offset_right = 1364.0
 offset_bottom = 410.0
 scale = Vector2(1.3339353, 1.3339353)
 theme_override_colors/font_color = Color(0.48138237, 0.11950571, 0.78786665, 1)
-theme_override_font_sizes/font_size = 150
+theme_override_fonts/font = ExtResource("2_4xyqs")
+theme_override_font_sizes/font_size = 160
 text = "🎮 CREDITS 🎮"
 horizontal_alignment = 1
 

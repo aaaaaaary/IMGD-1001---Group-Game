@@ -77,7 +77,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("dash"):
 		dashing = true 
 		dash_timer = DASH_TIME
-		
 	
 	if direction:
 		if dashing: 

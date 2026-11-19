@@ -8,6 +8,7 @@ class_name QuestManager extends Node2D
 @export var quest_name: String
 @export var quest_description: String
 @export var reached_goal_text: String
+@export var reputation_requirement: int
 
 enum QuestStatus{
 	available,

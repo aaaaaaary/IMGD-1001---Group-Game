@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://c81tp8pvmrt72" path="res://Scripts/UI Elements/main_menu.gd" id="1_ok4e3"]
 [ext_resource type="Texture2D" uid="uid://utihogyxjv4u" path="res://Assets/sprites/title_background.png" id="2_8iih6"]
-[ext_resource type="FontFile" uid="uid://0vgtjh4nnnvw" path="res://Assets/fonts/PixelOperator8.ttf" id="3_a6rwk"]
+[ext_resource type="FontFile" uid="uid://dd0jonjoymli4" path="res://Assets/fonts/PixelifySans-Medium.ttf" id="3_a6rwk"]
 [ext_resource type="Texture2D" uid="uid://cwtg3oqkcvkxa" path="res://Assets/sprites/Button.png" id="4_ok4e3"]
 [ext_resource type="Texture2D" uid="uid://c4ebwarp75sx6" path="res://Assets/sprites/Copy of Button.png" id="5_8iih6"]
 [ext_resource type="Texture2D" uid="uid://55rqae1ona6a" path="res://Assets/sprites/GreenButton.png" id="5_a6rwk"]
-[ext_resource type="FontFile" uid="uid://cdn2gcpjghsgv" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="6_8mne4"]
+[ext_resource type="FontFile" uid="uid://40rsfcxo42rm" path="res://Assets/fonts/PixelifySans-Bold.ttf" id="7_a6rwk"]
 [ext_resource type="AudioStream" uid="uid://dukpc13esyf1p" path="res://Assets/sounds/click.mp3" id="7_f4yor"]
 [ext_resource type="Texture2D" uid="uid://dxkl2ka606gk0" path="res://Assets/sprites/TitleFrame (4).png" id="8_a6rwk"]
 
@@ -84,7 +84,7 @@ theme_override_constants/separation = 20
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_a6rwk")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxTexture_kuoeh")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ck5pj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_a6rwk")
@@ -94,7 +94,7 @@ text = "Start"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_a6rwk")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxTexture_7ahcd")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_emkkk")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8ujxj")
@@ -104,7 +104,7 @@ text = "Credits"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_a6rwk")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxTexture_f0jst")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_f4yor")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8mne4")
@@ -126,8 +126,8 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 0.9720983)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("6_8mne4")
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("7_a6rwk")
+theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxTexture_hgn33")
 text = "Outcast Expedition"
 horizontal_alignment = 1

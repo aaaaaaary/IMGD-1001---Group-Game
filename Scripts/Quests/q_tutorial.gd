@@ -1,7 +1,11 @@
 extends Area2D
 
 @export var quest: FetchQuest
+@onready var rep_label: Label = $RepLabel
 var fruit := load("res://Scenes/Items/fruit.tscn")
+
+func _ready() -> void:
+	rep_label.text = str(quest.reputation_requirement)
 
 
 func _on_body_entered(body: Node2D) -> void:

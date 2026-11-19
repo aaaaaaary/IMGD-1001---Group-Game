@@ -2,20 +2,20 @@
 
 [ext_resource type="PackedScene" uid="uid://dbssv3yx2xxja" path="res://Scenes/player.tscn" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://bflrutfr06664" path="res://Scripts/UI Elements/game_manager.gd" id="1_ldgsr"]
-[ext_resource type="FontFile" uid="uid://cdn2gcpjghsgv" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="2_o5yvi"]
+[ext_resource type="FontFile" uid="uid://dcxbe8n68won6" path="res://Assets/fonts/PixelifySans-Regular.ttf" id="2_nb51f"]
 [ext_resource type="Texture2D" uid="uid://3k5d71c84ord" path="res://Assets/sprites/world_tileset.png" id="2_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://bn04ylrv466vp" path="res://Scenes/Obstacles/platform.tscn" id="3_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://5mbu855plu1" path="res://Scenes/Items/coin.tscn" id="4_3dryh"]
 [ext_resource type="PackedScene" uid="uid://3gck2bv6xsm" path="res://Scenes/killzone.tscn" id="5_wowpa"]
 [ext_resource type="PackedScene" uid="uid://dayhmvwihmgib" path="res://Scenes/Obstacles/platform_desert.tscn" id="6_i6g32"]
 [ext_resource type="PackedScene" uid="uid://bdmqbiq0gnd73" path="res://Scenes/Obstacles/platform_snow.tscn" id="7_1l0tm"]
-[ext_resource type="PackedScene" uid="uid://ntbxne5byr88" path="res://Scenes/Obstacles/slime.tscn" id="8_v158k"]
 [ext_resource type="FontFile" uid="uid://0vgtjh4nnnvw" path="res://Assets/fonts/PixelOperator8.ttf" id="10_o5yvi"]
 [ext_resource type="Script" uid="uid://db71551matabh" path="res://Scripts/Quests/q_tutorial.gd" id="12_1phco"]
 [ext_resource type="Texture2D" uid="uid://cdtyngmkfs4tp" path="res://Assets/sprites/knight.png" id="13_1phco"]
 [ext_resource type="Script" uid="uid://bxdoyr2fusda7" path="res://Scripts/Quests/fetch_quest.gd" id="14_nnt18"]
 [ext_resource type="Script" uid="uid://xova73lg2gyk" path="res://Scripts/Quests/timed_quest.gd" id="15_nb51f"]
 [ext_resource type="Script" uid="uid://b5wrieclagthc" path="res://Scripts/Quests/q_tutorial2.gd" id="15_nnt18"]
+[ext_resource type="PackedScene" uid="uid://dlc5h53clp3op" path="res://Scenes/Obstacles/TESTslime.tscn" id="16_nnt18"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
 texture = ExtResource("2_qxrlw")
@@ -274,7 +274,7 @@ offset_top = -42.0
 offset_right = 2455.0
 offset_bottom = -19.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_o5yvi")
+theme_override_fonts/font = ExtResource("2_nb51f")
 theme_override_font_sizes/font_size = 8
 text = "You collected
 X coins."
@@ -418,15 +418,6 @@ position = Vector2(1929, -44)
 
 [node name="Enemies" type="Node" parent="." unique_id=54575615]
 
-[node name="Slime" parent="Enemies" unique_id=633403041 instance=ExtResource("8_v158k")]
-position = Vector2(552, 48)
-
-[node name="Slime2" parent="Enemies" unique_id=1903698965 instance=ExtResource("8_v158k")]
-position = Vector2(936, 1)
-
-[node name="Slime4" parent="Enemies" unique_id=521884556 instance=ExtResource("8_v158k")]
-position = Vector2(1976, 48)
-
 [node name="Labels" type="Node" parent="." unique_id=1917735747]
 
 [node name="Label" type="Label" parent="Labels" unique_id=1021652801]
@@ -490,23 +481,23 @@ vertical_alignment = 1
 
 [node name="NPCs" type="Node" parent="." unique_id=711140323]
 
-[node name="Tutorial" type="Area2D" parent="NPCs" unique_id=1251530608 node_paths=PackedStringArray("quest")]
+[node name="TutorialFetch" type="Area2D" parent="NPCs" unique_id=1251530608 node_paths=PackedStringArray("quest")]
 position = Vector2(75, -67)
 script = ExtResource("12_1phco")
 quest = NodePath("Tutorial")
 
-[node name="Placeholder" type="Sprite2D" parent="NPCs/Tutorial" unique_id=1405479969]
+[node name="Placeholder" type="Sprite2D" parent="NPCs/TutorialFetch" unique_id=1405479969]
 position = Vector2(12.5, -5.5)
 texture = ExtResource("13_1phco")
 flip_h = true
 region_enabled = true
 region_rect = Rect2(9, 9, 13, 19)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Tutorial" unique_id=645204457]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/TutorialFetch" unique_id=645204457]
 position = Vector2(12, -6)
 shape = SubResource("RectangleShape2D_dnn6h")
 
-[node name="Tutorial" type="Node2D" parent="NPCs/Tutorial" unique_id=1327526738]
+[node name="Tutorial" type="Node2D" parent="NPCs/TutorialFetch" unique_id=1327526738]
 position = Vector2(12.5, -2.5)
 script = ExtResource("14_nnt18")
 quest_name = "Tutorial"
@@ -515,38 +506,70 @@ reached_goal_text = "Return to the knight"
 reputation = 1
 metadata/_custom_type_script = "uid://bxdoyr2fusda7"
 
-[node name="FruitSpawnPoint" type="Marker2D" parent="NPCs/Tutorial" unique_id=1604040272]
+[node name="FruitSpawnPoint" type="Marker2D" parent="NPCs/TutorialFetch" unique_id=1604040272]
 position = Vector2(845, -53)
 
-[node name="Tutorial2" type="Area2D" parent="NPCs" unique_id=740072495 node_paths=PackedStringArray("quest")]
+[node name="RepLabel" type="Label" parent="NPCs/TutorialFetch" unique_id=1474233641]
+offset_left = 3.0
+offset_top = -27.0
+offset_right = 23.0
+offset_bottom = -15.0
+theme_override_fonts/font = ExtResource("10_o5yvi")
+theme_override_font_sizes/font_size = 8
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TutorialTimed" type="Area2D" parent="NPCs" unique_id=740072495 node_paths=PackedStringArray("quest")]
 position = Vector2(203, -52)
 script = ExtResource("15_nnt18")
 quest = NodePath("TimedQuest")
 
-[node name="Placeholder" type="Sprite2D" parent="NPCs/Tutorial2" unique_id=962415727]
+[node name="Placeholder" type="Sprite2D" parent="NPCs/TutorialTimed" unique_id=962415727]
 position = Vector2(12.5, -5.5)
 texture = ExtResource("13_1phco")
 flip_h = true
 region_enabled = true
 region_rect = Rect2(9, 9, 13, 19)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/Tutorial2" unique_id=1590258083]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/TutorialTimed" unique_id=1590258083]
 position = Vector2(12, -6)
 shape = SubResource("RectangleShape2D_dnn6h")
 
-[node name="FruitSpawnPoint" type="Marker2D" parent="NPCs/Tutorial2" unique_id=348022478]
+[node name="FruitSpawnPoint" type="Marker2D" parent="NPCs/TutorialTimed" unique_id=348022478]
 position = Vector2(1181, -4)
 
-[node name="TimedQuest" type="Node2D" parent="NPCs/Tutorial2" unique_id=970292124]
+[node name="TimedQuest" type="Node2D" parent="NPCs/TutorialTimed" unique_id=970292124]
 script = ExtResource("15_nb51f")
 quest_name = "Timed Fruit"
 quest_description = "Get the fruit in the forest before the time runs out"
 reached_goal_text = "Return to the knight"
+reputation_requirement = 1
 metadata/_custom_type_script = "uid://xova73lg2gyk"
 
-[node name="Timer" type="Timer" parent="NPCs/Tutorial2" unique_id=1220577366]
+[node name="Timer" type="Timer" parent="NPCs/TutorialTimed" unique_id=1220577366]
 wait_time = 25.0
 
-[connection signal="body_entered" from="NPCs/Tutorial" to="NPCs/Tutorial" method="_on_body_entered"]
-[connection signal="body_entered" from="NPCs/Tutorial2" to="NPCs/Tutorial2" method="_on_body_entered"]
-[connection signal="timeout" from="NPCs/Tutorial2/Timer" to="NPCs/Tutorial2" method="_on_timer_timeout"]
+[node name="RepLabel" type="Label" parent="NPCs/TutorialTimed" unique_id=1371236060]
+offset_left = 3.0
+offset_top = -27.0
+offset_right = 23.0
+offset_bottom = -15.0
+theme_override_fonts/font = ExtResource("10_o5yvi")
+theme_override_font_sizes/font_size = 8
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slime" parent="." unique_id=633403041 instance=ExtResource("16_nnt18")]
+position = Vector2(552, 48)
+
+[node name="Slime2" parent="." unique_id=611594598 instance=ExtResource("16_nnt18")]
+position = Vector2(936, 0)
+
+[node name="Slime3" parent="." unique_id=2079762195 instance=ExtResource("16_nnt18")]
+position = Vector2(1976, 48)
+
+[connection signal="body_entered" from="NPCs/TutorialFetch" to="NPCs/TutorialFetch" method="_on_body_entered"]
+[connection signal="body_entered" from="NPCs/TutorialTimed" to="NPCs/TutorialTimed" method="_on_body_entered"]
+[connection signal="timeout" from="NPCs/TutorialTimed/Timer" to="NPCs/TutorialTimed" method="_on_timer_timeout"]

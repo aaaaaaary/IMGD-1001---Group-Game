@@ -2,13 +2,14 @@ class_name FetchQuest extends QuestManager
 
 func start_quest() -> void:
 	if get_tree().get_node_count_in_group("CurrentQuest") == 0:
-		if quest_status == QuestStatus.available:
-			quest_status = QuestStatus.started
-			add_to_group("CurrentQuest")
-			
-			QuestBox.visible = true
-			QuestTitle.text = quest_name
-			QuestDescription.text = quest_description
+		if GameManager.reputation >= reputation_requirement:
+			if quest_status == QuestStatus.available:
+				quest_status = QuestStatus.started
+				add_to_group("CurrentQuest")
+				
+				QuestBox.visible = true
+				QuestTitle.text = quest_name
+				QuestDescription.text = quest_description
 
 
 func reached_goal() -> void:
