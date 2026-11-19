@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://byk0onlh43ltg"]
+
+[ext_resource type="Texture2D" uid="uid://csuc2g2qotwi4" path="res://Assets/sprites/PLACEHOLDER_fruit.png" id="1_s4oer"]
+[ext_resource type="Script" uid="uid://lpqdkoxny8i4" path="res://Scripts/Obstacles/hitbox.gd" id="2_s4oer"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b71vu"]
+size = Vector2(16, 16)
+
+[node name="Node2D" type="Node2D" unique_id=624663428]
+
+[node name="PlaceholderFruit" type="Sprite2D" parent="." unique_id=1285369479]
+position = Vector2(0, -8)
+texture = ExtResource("1_s4oer")
+
+[node name="HitBox" type="Area2D" parent="PlaceholderFruit" unique_id=105425519]
+collision_mask = 0
+script = ExtResource("2_s4oer")
+metadata/_custom_type_script = "uid://lpqdkoxny8i4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaceholderFruit/HitBox" unique_id=680654390]
+shape = SubResource("RectangleShape2D_b71vu")
