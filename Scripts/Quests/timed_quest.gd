@@ -16,6 +16,7 @@ func restart_quest() -> void:
 	if quest_status == QuestStatus.started:
 		quest_status = QuestStatus.available
 		QuestDescription.text = "Your time ran out! Go back to restart the quest."
+		remove_from_group("CurrentQuest")
 
 
 func reached_goal() -> void:
