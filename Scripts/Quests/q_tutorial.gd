@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var quest: FetchQuest
+@onready var dialogue_manager: CanvasLayer = %DialogueManager
 @onready var rep_label: Label = $RepLabel
 var fruit := load("res://Scenes/Items/fruit.tscn")
 
@@ -10,6 +11,8 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
+		if Input.is_action_just_pressed("ui_accept"):
+			print("start dialogue")
 		if quest.quest_status == quest.QuestStatus.available:
 			quest.start_quest()
 			var new_fruit = fruit.instantiate()

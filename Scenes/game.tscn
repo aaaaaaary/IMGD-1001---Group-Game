@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://xova73lg2gyk" path="res://Scripts/Quests/timed_quest.gd" id="15_nb51f"]
 [ext_resource type="Script" uid="uid://b5wrieclagthc" path="res://Scripts/Quests/q_tutorial2.gd" id="15_nnt18"]
 [ext_resource type="PackedScene" uid="uid://dlc5h53clp3op" path="res://Scenes/Obstacles/TESTslime.tscn" id="16_nnt18"]
+[ext_resource type="PackedScene" uid="uid://bavhtbbe4vds5" path="res://Scenes/HUD Elements/dialogue_manager.tscn" id="17_ewbju"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
 texture = ExtResource("2_qxrlw")
@@ -420,6 +421,15 @@ position = Vector2(2428, -334)
 
 [node name="Enemies" type="Node" parent="." unique_id=54575615]
 
+[node name="Slime" parent="Enemies" unique_id=633403041 instance=ExtResource("16_nnt18")]
+position = Vector2(1051, -242)
+
+[node name="Slime2" parent="Enemies" unique_id=611594598 instance=ExtResource("16_nnt18")]
+position = Vector2(1435, -290)
+
+[node name="Slime3" parent="Enemies" unique_id=2079762195 instance=ExtResource("16_nnt18")]
+position = Vector2(2475, -242)
+
 [node name="Labels" type="Node" parent="." unique_id=1917735747]
 
 [node name="Label" type="Label" parent="Labels" unique_id=1021652801]
@@ -570,14 +580,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Slime" parent="." unique_id=633403041 instance=ExtResource("16_nnt18")]
-position = Vector2(552, 48)
-
-[node name="Slime2" parent="." unique_id=611594598 instance=ExtResource("16_nnt18")]
-position = Vector2(936, 0)
-
-[node name="Slime3" parent="." unique_id=2079762195 instance=ExtResource("16_nnt18")]
-position = Vector2(1976, 48)
+[node name="DialogueManager" parent="." unique_id=1700163037 instance=ExtResource("17_ewbju")]
+unique_name_in_owner = true
 
 [connection signal="body_entered" from="NPCs/TutorialFetch" to="NPCs/TutorialFetch" method="_on_body_entered"]
 [connection signal="body_entered" from="NPCs/TutorialTimed" to="NPCs/TutorialTimed" method="_on_body_entered"]
