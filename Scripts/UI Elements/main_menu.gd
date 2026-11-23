@@ -11,7 +11,7 @@ func _on_start_pressed() -> void:
 	Reputation.visible = true
 	HP.visible = true
 	Coins.visible = true
-	get_tree().change_scene_to_file("res://Scenes/game.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Worlds/tutorial.tscn")
 
 func _on_credits_pressed() -> void:
 	click_sound.play()

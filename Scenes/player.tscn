@@ -362,5 +362,14 @@ shape = SubResource("RectangleShape2D_lmmwo")
 
 [node name="Timer" type="Timer" parent="." unique_id=497449362]
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=454836491]
+position = Vector2(0, -5)
+scale = Vector2(1.0156665, -3.6332111)
+zoom = Vector2(4, 4)
+limit_left = -10000003
+limit_right = 9999997
+limit_bottom = 200
+position_smoothing_enabled = true
+
 [connection signal="health_depleted" from="Health" to="." method="_on_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

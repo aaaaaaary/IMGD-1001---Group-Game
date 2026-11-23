@@ -1,22 +1,56 @@
 [gd_scene format=3 uid="uid://byk0onlh43ltg"]
 
-[ext_resource type="Texture2D" uid="uid://csuc2g2qotwi4" path="res://Assets/sprites/PLACEHOLDER_fruit.png" id="1_s4oer"]
+[ext_resource type="Texture2D" uid="uid://c4k430e7mkdd8" path="res://Assets/sprites/world1_tileset.png" id="1_s4oer"]
 [ext_resource type="Script" uid="uid://lpqdkoxny8i4" path="res://Scripts/Obstacles/hitbox.gd" id="2_s4oer"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b71vu"]
-size = Vector2(16, 16)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b71vu"]
+texture = ExtResource("1_s4oer")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+0:4/0 = 0
+2:4/0 = 0
+0:5/0 = 0
+0:6/0 = 0
+2:6/0 = 0
+0:7/0 = 0
+2:7/0 = 0
+0:8/0 = 0
+0:9/0 = 0
+0:10/0 = 0
+0:11/0 = 0
+0:12/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_6sj1v"]
+sources/0 = SubResource("TileSetAtlasSource_b71vu")
 
 [node name="Node2D" type="Node2D" unique_id=624663428]
 
-[node name="PlaceholderFruit" type="Sprite2D" parent="." unique_id=1285369479]
-position = Vector2(0, -8)
-texture = ExtResource("1_s4oer")
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=869854275]
+position = Vector2(8, 0)
+tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 5, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_6sj1v")
 
-[node name="HitBox" type="Area2D" parent="PlaceholderFruit" unique_id=105425519]
+[node name="HitBox" type="Area2D" parent="TileMapLayer" unique_id=105425519]
+position = Vector2(-8, -8)
 collision_mask = 0
 script = ExtResource("2_s4oer")
 damage = 3
 metadata/_custom_type_script = "uid://lpqdkoxny8i4"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaceholderFruit/HitBox" unique_id=680654390]
-shape = SubResource("RectangleShape2D_b71vu")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMapLayer/HitBox" unique_id=40873854]
+polygon = PackedVector2Array(-8, 8, -8, 6, -1, -8, 0, -8, 7, 6, 8, 7, 8, 8)
