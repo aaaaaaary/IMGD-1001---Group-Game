@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://hsfvr1e7xluq"]
+
+[ext_resource type="Texture2D" uid="uid://d0186s81xngb2" path="res://Assets/sprites/fruit.png" id="1_scykw"]
+
+[node name="Heart" type="Panel" unique_id=731321277]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(11, 10)
+offset_right = 11.0
+offset_bottom = 10.0
+scale = Vector2(4, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1184818584]
+texture = ExtResource("1_scykw")
+centered = false
+region_enabled = true
+region_rect = Rect2(34, 54, 11, 10)
