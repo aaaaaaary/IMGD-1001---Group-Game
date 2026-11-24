@@ -17,7 +17,7 @@ func set_max_health(value: int):
 	
 	if not clamped_value == max_health:
 		var difference = clamped_value - max_health
-		max_health = value
+		max_health = clamped_value
 		max_health_changed.emit(difference)
 		
 		if health > max_health: #if health exceeds the max health, cap it at the max health value
@@ -30,18 +30,16 @@ func get_max_health() -> int:
 func set_health(value: int):
 	if value < health and immortality:
 		return
-	
-	var clamped_value = clampi(value, 0, max_health) #0 is the minimum health, max health is the maximum
-	
+
+	var clamped_value = clampi(value, 0, max_health)
+
 	if clamped_value != health:
 		var difference = clamped_value - health
-		health = value
+		health = clamped_value
 		health_changed.emit(difference)
-		
-		if health == 0:
-			health_depleted.emit()
-			
-			
+
+	if health == 0:
+		health_depleted.emit()
 
 func get_health() -> int:
 	return health

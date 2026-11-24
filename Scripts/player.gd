@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var health: Health = $Health
-@onready var pop_sound = $pop 
-@onready var run_sound = $run
+@onready var pop_sound = $pop
+@onready var die_sound = $die  
 
 
 # constants
@@ -21,8 +21,9 @@ var dash_timer = 0.0
 
 # death variables
 @onready var death_timer: Timer = $Timer
-var death_sound = AudioStreamPlayer2D.new()
 var respawn_point: Vector2
+var is_dead = false
+
 
 
 
@@ -63,20 +64,24 @@ func _physics_process(delta: float) -> void:
 	elif direction < 0:
 		animated_sprite.flip_h = true
 	
+	if Input.is_action_just_pressed("dash"):
+		dashing = true
+		dash_timer = DASH_TIME
+	if Input.is_action_just_pressed("dash"):
+		dashing = true
+		dash_timer = DASH_TIME
+
 	# Play animations
-	if is_on_floor():
+	if dashing:
+		animated_sprite.play("dash")
+	elif is_on_floor():
 		if direction == 0:
 			animated_sprite.play("idle")
 		else:
 			animated_sprite.play("run")
-			run_sound.play()
 	else:
 		animated_sprite.play("jump")
-		pop_sound.play()
-	
-	if Input.is_action_just_pressed("dash"):
-		dashing = true 
-		dash_timer = DASH_TIME
+		
 	
 	if direction:
 		if dashing: 
@@ -90,18 +95,27 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_health_depleted() -> void:
-	print("You died!")
-	Engine.time_scale = 0.5
-	#get_node("CollisionShape2D").queue_free()
-	death_timer.wait_time = 0.6
-	var stream = load("res://Assets/sounds/die.mp3")
-	death_sound.stream = stream
-	death_timer.start()
-	death_sound.play()
+	if is_dead:
+		return
 
+	is_dead = true
+	print("You died!")
+	set_physics_process(false)
+	animated_sprite.play("death")
+	Engine.time_scale = 0.5
+	death_timer.wait_time = 0.6
+	death_timer.start()
+	die_sound.play()
 
 func _on_timer_timeout() -> void:
 	Engine.time_scale = 1.0
 	death_timer.stop()
 	global_position = respawn_point
 	health.set_health(health.get_max_health())
+	velocity = Vector2.ZERO
+	dashing = false
+	dash_timer = 0.0
+	jump_count = 0
+	is_dead = false
+	animated_sprite.play("idle")
+	set_physics_process(true)

@@ -1,5 +1,5 @@
 extends Node
-@onready var score_label: Label = $ScoreLabel
+@onready var score_label: Label = $Coins/Coins
 
 var score = 0
 var reputation = 0
@@ -10,4 +10,4 @@ var reputation = 0
 
 func add_point():
 	score += 1;
-	score_label.text = "You collected " + str(score) + " coins."
+	score_label.text = "Coins: " + str(score)
