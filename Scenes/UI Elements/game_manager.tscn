@@ -33,6 +33,7 @@ region_enabled = true
 region_rect = Rect2(5, 57, 14, 15)
 
 [node name="Health" type="CanvasLayer" parent="." unique_id=562154539]
+visible = false
 
 [node name="Health" type="Label" parent="Health" unique_id=1725224717]
 offset_left = 1510.0
