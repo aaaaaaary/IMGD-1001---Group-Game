@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c7infuavkha2e"]
 
 [ext_resource type="PackedScene" uid="uid://dbssv3yx2xxja" path="res://Scenes/player.tscn" id="1_ebmjs"]
-[ext_resource type="Script" uid="uid://bflrutfr06664" path="res://Scripts/UI Elements/game_manager.gd" id="1_ldgsr"]
+[ext_resource type="Script" uid="uid://bflrutfr06664" path="res://Scripts/UI Elements/game_manager1.gd" id="1_ldgsr"]
 [ext_resource type="FontFile" uid="uid://dcxbe8n68won6" path="res://Assets/fonts/PixelifySans-Regular.ttf" id="2_nb51f"]
 [ext_resource type="Texture2D" uid="uid://3k5d71c84ord" path="res://Assets/sprites/world_tileset.png" id="2_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://bn04ylrv466vp" path="res://Scenes/Obstacles/platform.tscn" id="3_wrm1d"]
@@ -502,6 +502,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=700060465]
+unique_name_in_owner = true
 visible = false
 
 [node name="Quest" type="Panel" parent="HUD" unique_id=594616669]

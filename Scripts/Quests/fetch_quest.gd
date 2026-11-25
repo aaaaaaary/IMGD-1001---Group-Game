@@ -1,8 +1,10 @@
 class_name FetchQuest extends QuestManager
+@onready var game_manager: Node = %GameManager
+
 
 func start_quest() -> void:
 	if get_tree().get_node_count_in_group("CurrentQuest") == 0:
-		if GameManager.reputation >= reputation_requirement:
+		if GameState.reputation >= reputation_requirement:
 			if quest_status == QuestStatus.available:
 				quest_status = QuestStatus.started
 				add_to_group("CurrentQuest")
@@ -24,4 +26,4 @@ func finish_quest() -> void:
 		remove_from_group("CurrentQuest")
 		
 		QuestBox.visible = false
-		GameManager.reputation += reputation
+		game_manager.update_reputation(reputation)

@@ -19,7 +19,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-			
+		
 		if quest.quest_status == quest.QuestStatus.available:
 				dialogue_manager.start_dialogue(dialogue_start);
 				await dialogue_manager.get_node("DialogueBox").visibility_changed
@@ -28,6 +28,7 @@ func _on_body_entered(body: Node2D) -> void:
 				dialogue_choices.set_choices(choices);
 				
 		if quest.quest_status == quest.QuestStatus.reached_goal:
+			dialogue_manager.start_dialogue(dialogue_complete)
 			quest.finish_quest()
 
 

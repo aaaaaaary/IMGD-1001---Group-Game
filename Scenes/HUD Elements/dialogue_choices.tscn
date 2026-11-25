@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://b2bsmmo3cm6qn"]
+
+[ext_resource type="Script" uid="uid://yyyf7opmwrj7" path="res://Scripts/Dialogue/dialogue_choices.gd" id="1_21dfw"]
+[ext_resource type="FontFile" uid="uid://dd0jonjoymli4" path="res://Assets/fonts/PixelifySans-Medium.ttf" id="1_asku8"]
+
+[node name="DialogueChoices" type="CanvasLayer" unique_id=412279029]
+process_mode = 3
+script = ExtResource("1_21dfw")
+
+[node name="ChoicesBox" type="Control" parent="." unique_id=79386138]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="ChoicesBox" unique_id=308156027]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 10
+
+[node name="Choices" type="VBoxContainer" parent="ChoicesBox/MarginContainer" unique_id=1466444338]
+layout_mode = 2
+
+[node name="Accept" type="Button" parent="ChoicesBox/MarginContainer/Choices" unique_id=446612463]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_asku8")
+theme_override_font_sizes/font_size = 32
+text = "god please work i cant take this anymore"
+alignment = 0
+
+[node name="Deny" type="Button" parent="ChoicesBox/MarginContainer/Choices" unique_id=518871571]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_asku8")
+theme_override_font_sizes/font_size = 32
+text = "god please work i cant take this anymore"
+alignment = 0

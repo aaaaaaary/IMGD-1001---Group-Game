@@ -1,4 +1,5 @@
 class_name Health extends Node
+@onready var game_manager: Node = $"../../GameManager"
 
 
 signal max_health_changed(diff: int)
@@ -40,6 +41,7 @@ func set_health(value: int):
 
 	if health == 0:
 		health_depleted.emit()
+	game_manager.update_health(health)
 
 func get_health() -> int:
 	return health
