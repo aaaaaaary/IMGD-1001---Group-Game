@@ -18,6 +18,8 @@ var max_jumps = 2
 # dash variable
 var dashing = false 
 var dash_timer = 0.0 
+var dash_cooldown = 1.0
+var cooldown_timer = 0.0
 
 # death variables
 @onready var death_timer: Timer = $Timer
@@ -40,6 +42,10 @@ func _physics_process(delta: float) -> void:
 		
 	if is_on_floor():
 		jump_count=0
+		
+		
+	if cooldown_timer > 0:
+		cooldown_timer -= delta
 		
 	if dashing:
 		dash_timer -=delta
@@ -64,12 +70,10 @@ func _physics_process(delta: float) -> void:
 	elif direction < 0:
 		animated_sprite.flip_h = true
 	
-	if Input.is_action_just_pressed("dash"):
+	if Input.is_action_just_pressed("dash") and cooldown_timer <= 0 and not dashing:
 		dashing = true
 		dash_timer = DASH_TIME
-	if Input.is_action_just_pressed("dash"):
-		dashing = true
-		dash_timer = DASH_TIME
+		cooldown_timer = dash_cooldown
 
 	# Play animations
 	if dashing:
