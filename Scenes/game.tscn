@@ -16,11 +16,13 @@
 [ext_resource type="Script" uid="uid://xova73lg2gyk" path="res://Scripts/Quests/timed_quest.gd" id="15_nb51f"]
 [ext_resource type="Script" uid="uid://b5wrieclagthc" path="res://Scripts/Quests/q_tutorial2.gd" id="15_nnt18"]
 [ext_resource type="PackedScene" uid="uid://dlc5h53clp3op" path="res://Scenes/Obstacles/TESTslime.tscn" id="16_nnt18"]
-[ext_resource type="PackedScene" uid="uid://bavhtbbe4vds5" path="res://Scenes/HUD Elements/dialogue_manager.tscn" id="17_ewbju"]
 [ext_resource type="FontFile" uid="uid://40rsfcxo42rm" path="res://Assets/fonts/PixelifySans-Bold.ttf" id="18_exi56"]
 [ext_resource type="Texture2D" uid="uid://denmr44hjdeo" path="res://Assets/sprites/slime_green.png" id="19_7t8sx"]
+[ext_resource type="Script" uid="uid://yyyf7opmwrj7" path="res://Scripts/Dialogue/dialogue_choices.gd" id="19_mg4q0"]
 [ext_resource type="Texture2D" uid="uid://d0186s81xngb2" path="res://Assets/sprites/fruit.png" id="20_mg4q0"]
+[ext_resource type="Script" uid="uid://daykebhejb22g" path="res://Scripts/Dialogue/dialogue_manager.gd" id="21_exi56"]
 [ext_resource type="Texture2D" uid="uid://ca7w5vv7x3e4a" path="res://Assets/sprites/coin.png" id="21_vm72l"]
+[ext_resource type="FontFile" uid="uid://dd0jonjoymli4" path="res://Assets/fonts/PixelifySans-Medium.ttf" id="23_vm72l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
 texture = ExtResource("2_qxrlw")
@@ -190,6 +192,10 @@ sources/0 = SubResource("TileSetAtlasSource_wrm1d")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dnn6h"]
 size = Vector2(13, 19)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7t8sx"]
+font = ExtResource("2_nb51f")
+font_size = 32
 
 [node name="Game" type="Node2D" unique_id=1352168060]
 position = Vector2(499, -290)
@@ -495,10 +501,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="DialogueManager" parent="." unique_id=1700163037 instance=ExtResource("17_ewbju")]
-unique_name_in_owner = true
-
 [node name="HUD" type="CanvasLayer" parent="." unique_id=700060465]
+visible = false
 
 [node name="Quest" type="Panel" parent="HUD" unique_id=594616669]
 offset_left = 17.0
@@ -595,6 +599,90 @@ texture = ExtResource("21_vm72l")
 region_enabled = true
 region_rect = Rect2(3, 3, 10, 10)
 
+[node name="DialogueManager" type="CanvasLayer" parent="." unique_id=797819535]
+unique_name_in_owner = true
+process_mode = 3
+script = ExtResource("21_exi56")
+
+[node name="DialogueBox" type="Control" parent="DialogueManager" unique_id=2098289343]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="DialogueManager/DialogueBox" unique_id=1698264411]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="DialogueText" type="Label" parent="DialogueManager/DialogueBox" unique_id=23890527]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "This is the dialogue text."
+label_settings = SubResource("LabelSettings_7t8sx")
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="DialogueChoices" type="CanvasLayer" parent="." unique_id=832019514]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
+script = ExtResource("19_mg4q0")
+
+[node name="ChoicesBox" type="Control" parent="DialogueChoices" unique_id=1545468486]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogueChoices/ChoicesBox" unique_id=214593833]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 12
+
+[node name="Choices" type="VBoxContainer" parent="DialogueChoices/ChoicesBox/MarginContainer" unique_id=95729268]
+layout_mode = 2
+
+[node name="Accept" type="Button" parent="DialogueChoices/ChoicesBox/MarginContainer/Choices" unique_id=714912036]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("23_vm72l")
+theme_override_font_sizes/font_size = 24
+text = "god please work i cant take this anymore"
+alignment = 0
+
+[node name="Deny" type="Button" parent="DialogueChoices/ChoicesBox/MarginContainer/Choices" unique_id=300279496]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("23_vm72l")
+theme_override_font_sizes/font_size = 24
+text = "god please work i cant take this anymore"
+alignment = 0
+
 [connection signal="body_entered" from="NPCs/TutorialFetch" to="NPCs/TutorialFetch" method="_on_body_entered"]
 [connection signal="body_entered" from="NPCs/TutorialTimed" to="NPCs/TutorialTimed" method="_on_body_entered"]
 [connection signal="timeout" from="NPCs/TutorialTimed/Timer" to="NPCs/TutorialTimed" method="_on_timer_timeout"]
+[connection signal="SELECTED" from="DialogueChoices" to="NPCs/TutorialFetch" method="_on_dialogue_choices_selected"]

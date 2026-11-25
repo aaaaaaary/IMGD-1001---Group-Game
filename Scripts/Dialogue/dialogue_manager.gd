@@ -25,7 +25,7 @@ func _input(event):
 	if not is_dialogue_active:
 		return
 	#user presses enter or space bar
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("interact"):
 		advance_dialogue()
 
 func advance_dialogue():
