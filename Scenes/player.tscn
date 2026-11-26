@@ -222,7 +222,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"dash",
-"speed": 25.0
+"speed": 40.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -260,7 +260,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"death",
-"speed": 15.0
+"speed": 25.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -330,8 +330,10 @@ script = ExtResource("1_cvnsp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=265823274]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_v7365")
-animation = &"death"
+animation = &"dash"
 autoplay = "idle"
+frame = 15
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=170653996]
 position = Vector2(-0.5, -7.5)

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://chvsxuy3umgk4"]
+
+[ext_resource type="Script" uid="uid://dejkwxog1vm7x" path="res://Scripts/Items/sign_wife.gd" id="1_brmqd"]
+[ext_resource type="Texture2D" uid="uid://docrl0lgf7rg6" path="res://Assets/sprites/quest_spritesheet.png" id="2_brmqd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmddj"]
+size = Vector2(16, 13)
+
+[node name="SignWife" type="Area2D" unique_id=1475812701]
+script = ExtResource("1_brmqd")
+
+[node name="Sign" type="Sprite2D" parent="." unique_id=1774766656]
+texture = ExtResource("2_brmqd")
+region_enabled = true
+region_rect = Rect2(1, 20, 14, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1630577108]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_lmddj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

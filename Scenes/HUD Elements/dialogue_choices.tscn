@@ -32,7 +32,7 @@ theme_override_constants/margin_bottom = 10
 [node name="Choices" type="VBoxContainer" parent="ChoicesBox/MarginContainer" unique_id=1466444338]
 layout_mode = 2
 
-[node name="Accept" type="Button" parent="ChoicesBox/MarginContainer/Choices" unique_id=446612463]
+[node name="Button" type="Button" parent="ChoicesBox/MarginContainer/Choices" unique_id=446612463]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_asku8")
 theme_override_font_sizes/font_size = 32

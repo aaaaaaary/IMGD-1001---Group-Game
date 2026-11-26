@@ -62,6 +62,18 @@ Version 1.2
 > Began work on Other Animations: Death & Dash
 > Updated UI
 > Updated Tutorial Map (not implemeted yet)
-> Began First World Design"
+> Began First World Design
+
+Version 1.3
+>Fixed Timed Quest Bug
+> Implemented Tutorial Level
+> Created Tutorial Quest
+> Created Dialogue System
+> Updated HUD
+> Updated Character Animations: Dash
+> Updated Character Animations: Death
+> Fixed SFX and Music Looping
+> Created Quest Sprite Sheet
+> Added Dash Cooldown"
 
 [connection signal="pressed" from="BackHomeButton" to="." method="_on_back_home_button_pressed"]

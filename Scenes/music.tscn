@@ -3,6 +3,7 @@
 [ext_resource type="AudioStream" uid="uid://dhsvahd04qmck" path="res://Assets/sounds/maksymmalko-game-game-music-581017.mp3" id="1_fbmny"]
 
 [node name="Music" type="AudioStreamPlayer2D" unique_id=124879302]
+process_mode = 3
 stream = ExtResource("1_fbmny")
 volume_db = -0.205
 autoplay = true
